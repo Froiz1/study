@@ -1,14 +1,16 @@
-user_input = input("Введите числа через запятую: ")
-numbers = list(map(int, user_input.split(",")))
-product = 1
+user_input = input("Введите список значений в граммах, разделённых запятой: ")
 
-if numbers:
-    print(" Сумма: ", sum(numbers))
-for num in numbers:
-    product *= num
-print(" Произведение: ", product)
-if numbers:
-    print(" Максимум: ", max(numbers))
-    print(" Минимум: ", min(numbers))
-even_numbers = [x for x in numbers if x % 2 == 0]
-print(" Чётные числа: ", even_numbers)
+try:
+    grams_list = list(map(float, user_input.split(",")))
+except ValueError:
+    print("Ошибка: убедитесь, что вводите только числа, разделённые запятой.")
+    grams_list = []
+
+grams_in_pound = 453
+
+if grams_list:
+    pounds_list = [round(grams / grams_in_pound, 2) for grams in grams_list]
+    print("Граммы: ", sum(grams_list))
+    print("Паунды: ", sum(pounds_list))
+else:
+    print("Список пуст или неверно введён.")
