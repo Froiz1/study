@@ -1,6 +1,9 @@
-print()
-print("Hello!\n")
-for num in range(0, 51, 2):
-    print(end=f'{num}\t')
+user_num = 5
+
+if user_num < 0:
+    print("Error")
 else:
-    print("\n\nWell Done!")
+    factorial = 1
+    for i in range(1, user_num + 1):
+        factorial *= i
+    print(f"Your factorial num for {user_num} = {factorial}")
