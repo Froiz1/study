@@ -1,10 +1,6 @@
-user_num = 5
-
-print("\nMultiplication table:\n")
-
-for a in range(1, 11):
-    for b in range(user_num, user_num + 1):
-        print(f'{b} * {a} = {b * a}')
-        break
+print()
+print("Hello!\n")
+for num in range(0, 51, 2):
+    print(end=f'{num}\t')
 else:
-    print("\nWell Done!")
+    print("\n\nWell Done!")
