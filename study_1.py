@@ -1,16 +1,14 @@
-week_days = {
-    1: "Sunday",
-    2: "Monday",
-    3: "Tuesday",
-    4: "Wednesday",
-    5: "Thursday",
-    6: "Friday",
-    7: "Saturday",
-}
+user_input = input("Введите числа через запятую: ")
+numbers = list(map(int, user_input.split(",")))
+product = 1
 
-user_day = 5
-
-if user_day < 1 or user_day > 7:
-    print("Error")
-else:
-    print(week_days[user_day])
+if numbers:
+    print(" Сумма: ", sum(numbers))
+for num in numbers:
+    product *= num
+print(" Произведение: ", product)
+if numbers:
+    print(" Максимум: ", max(numbers))
+    print(" Минимум: ", min(numbers))
+even_numbers = [x for x in numbers if x % 2 == 0]
+print(" Чётные числа: ", even_numbers)
