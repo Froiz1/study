@@ -1,16 +1,18 @@
-user_input = input("Введите список значений в граммах, разделённых запятой: ")
+def minimal(l):
+    min_number = l[0]
+    for el in l:
+        if el < min_number:
+         min_number = el
 
-try:
-    grams_list = list(map(float, user_input.split(",")))
-except ValueError:
-    print("Ошибка: убедитесь, что вводите только числа, разделённые запятой.")
-    grams_list = []
+    return min_number
 
-grams_in_pound = 453
+nums1 = [5, 7, 2, 9, 4, 1]
+min1 = minimal(nums1)
 
-if grams_list:
-    pounds_list = [round(grams / grams_in_pound, 2) for grams in grams_list]
-    print("Граммы: ", sum(grams_list))
-    print("Паунды: ", sum(pounds_list))
+nums2 = [5.4, 7.2, 2.3, 2.1, 9.4, 4.21]
+min2 = minimal(nums2)
+
+if min1 < min2:
+    print(min1)
 else:
-    print("Список пуст или неверно введён.")
+    print(min2)
